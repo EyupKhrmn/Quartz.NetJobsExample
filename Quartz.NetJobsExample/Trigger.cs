@@ -27,6 +27,6 @@ public class Trigger
 
         ISimpleTrigger triggerLessonMission = (ISimpleTrigger)TriggerBuilder.Create().WithIdentity("LessonMission").StartAt(DateTime.UtcNow).WithSimpleSchedule(x => x.WithIntervalInSeconds(15).WithRepeatCount(1)).Build();
         
-        sched.ScheduleJob(lessonMission, triggerLessonMission);
+        sched.Result.ScheduleJob(lessonMission, triggerLessonMission);
     }
 }
